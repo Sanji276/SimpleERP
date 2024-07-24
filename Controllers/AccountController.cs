@@ -25,6 +25,7 @@ namespace SimpleERP.Controllers
 			}
 			return View();
 		}
+		[HttpGet]
 		public IActionResult CreateUser()
 		{
 			return View();
@@ -37,8 +38,8 @@ namespace SimpleERP.Controllers
 			{
 				if (ModelState.IsValid)
 				{
-					var (response1, response2) =  await this.accountRepository.Add(user);
-					if(response2.IsSuccess)
+					var (userRegisterResponse, ErrorHandlingResponse) =  await this.accountRepository.Add(user);
+					if(ErrorHandlingResponse.IsSuccess)
 					{
 						return RedirectToAction("Login","Account");
 					}

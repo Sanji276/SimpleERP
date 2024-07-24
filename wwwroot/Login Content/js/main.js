@@ -28,32 +28,32 @@
     });
 
     function validate (input) {
-        if($(input).attr('type') == 'email' || $(input).attr('name') == 'Email') {
+        if($(input).attr('type') == 'text' && $(input).attr('name') == 'Email') {
             if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
                 return false;
             }
         }
-        else if ($(input).attr('type') == 'password' || $(input).attr('name') == 'Password') {
+        else if ($(input).attr('type') == 'password' && $(input).attr('name') == 'Password') {
             var elementValue = $(input).val().trim();
             if (elementValue == '' || elementValue.length < 6) {
                 return false;
             }
         }
-        else if ($(input).attr('type') == 'password' || $(input).attr('name') == 'CPassword') {
+        else if ($(input).attr('id') == 'cPass') {
             var elementValue = $(input).val().trim();
             if (elementValue == '' || elementValue.length < 6) {
                 return false;
             }
         }
-        else if ($(input).attr('type') == 'text' || $(input).attr('name') == 'fname') {
+        else if ($(input).attr('id') == 'fnam') {
             var elementValue = $(input).val().trim();
-            if (elementValue == '' || elementValue.length < 6) {
+            if (elementValue == '') {
                 return false;
             }
         }
-        else if ($(input).attr('type') == 'text' || $(input).attr('name') == 'lname') {
+        else if ($(input).attr('id') == 'lnam') {
             var elementValue = $(input).val().trim();
-            if (elementValue == '' || elementValue.length < 6) {
+            if (elementValue == '') {
                 return false;
             }
         }

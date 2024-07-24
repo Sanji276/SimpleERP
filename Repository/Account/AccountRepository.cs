@@ -19,7 +19,8 @@ namespace SimpleERP.Repository.Account
 				{
 					FirstName = entity.FirstName,
 					LastName = entity.LastName,
-					Email = entity.Email
+					Email = entity.Email,
+					UserName = entity.Email
 				};
 				var result = await _userManager.CreateAsync(user, entity.Password);
 
@@ -28,6 +29,7 @@ namespace SimpleERP.Repository.Account
 					identityResult = result
 				};
 				var errorEntity = new ErrorHandlingModel();
+				errorEntity.ErrorMessageList = new List<string>();
 				if (result.Succeeded)
 				{
 					errorEntity.ErrorCode = 000;
@@ -38,6 +40,10 @@ namespace SimpleERP.Repository.Account
 				{
 					errorEntity.ErrorCode = 111;
 					errorEntity.ErrorMessage = "Failed";
+					foreach (var item in result.Errors)
+					{
+						errorEntity.ErrorMessageList.Add(item.Description);
+					}
 					errorEntity.IsSuccess = false;
 				}
 				return (userEntity, errorEntity);
@@ -58,7 +64,7 @@ namespace SimpleERP.Repository.Account
 			throw new NotImplementedException();
 		}
 
-		public Task Update(UserRegisterModel entity)
+		public Task<UserRegisterModel> Update(UserRegisterModel entity)
 		{
 			throw new NotImplementedException();
 		}

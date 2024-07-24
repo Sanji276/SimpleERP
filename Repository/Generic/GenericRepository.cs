@@ -13,7 +13,7 @@ namespace SimpleERP.Repository.Generic
 			throw new NotImplementedException();
 		}
 
-		public Task Update(T entity)
+		public Task<T> Update(T entity)
 		{
 			throw new NotImplementedException();
 		}

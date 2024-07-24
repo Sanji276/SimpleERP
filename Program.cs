@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SimpleERP.Database;
 using SimpleERP.Models.Account;
+using SimpleERP.Models.Error;
+using SimpleERP.Repository.Account;
+using SimpleERP.Repository.Generic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +20,12 @@ builder.Services.AddDbContext<SimpleERPDbContext>(
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<SimpleERPDbContext>()
     .AddDefaultTokenProviders();
+
+// Generic repository registration
+builder.Services.AddScoped(typeof(IGenericRepository<,>), typeof(GenericRepository<,>));
+
+// Specific AccountRepository registration
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 
 
 var app = builder.Build();
