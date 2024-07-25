@@ -1,0 +1,221 @@
+﻿@{
+    ViewData["Title"] = "Create Purchase Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .table-responsive {
+        overflow-x: auto;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .table {
+        min-width: 1200px; /* Adjusted to accommodate all columns */
+    }
+
+
+
+    .icon-container {
+        position: relative;
+    }
+
+        .icon-container .icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+    .modal-content {
+        max-width: 80%;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Create Purchase Order</div>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="vendorCode" class="col-form-label">Vendor Code</label>
+                                <input type="text" class="form-control" id="vendorCode" placeholder="Enter Vendor Code" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="vendorName" class="col-form-label">Vendor Name</label>
+                                <input type="text" class="form-control" id="vendorName" placeholder="Enter Vendor Name" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="vendorAddress" class="col-form-label">Vendor Address</label>
+                                <input type="text" class="form-control" id="vendorAddress" placeholder="Enter Vendor Address" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="vendorPhone" class="col-form-label">Vendor Phone</label>
+                                <input type="text" class="form-control" id="vendorPhone" placeholder="Enter Vendor Phone" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-head-bg-info table-bordered-bd-info">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Item Code</th>
+                                            <th scope="col">Item Description</th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Unit Price</th>
+                                            <th scope="col">Discount</th>
+                                            <th scope="col">Warehouse</th>
+                                            <th scope="col">Instock</th>
+                                            <th scope="col">Line Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 150px; max-height: 30px;" id="itemCode1" class="form-control" placeholder="Item Code" />
+                                                    
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 200px; max-height: 30px;" id="itemDescription1" class="form-control" placeholder="Item Description" disabled />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 100px; max-height: 30px;" id="quantity1" class="form-control" placeholder="Quantity" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 100px; max-height: 30px;" id="unitPrice1" class="form-control" placeholder="Unit Price" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 100px; max-height: 30px;" id="discount1" class="form-control" placeholder="Discount" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 100px; max-height: 30px;" id="warehouse1" class="form-control" placeholder="Warehouse" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 100px; max-height: 30px;" id="instock1" class="form-control" placeholder="Instock" disabled />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 100px; max-height: 30px;" id="lineTotal1" class="form-control" placeholder="Line Total" disabled />
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>2</td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 150px; max-height: 30px;" id="itemCode1" class="form-control" placeholder="Item Code" />
+
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 200px; max-height: 30px;" id="itemDescription1" class="form-control" placeholder="Item Description" disabled />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 100px; max-height: 30px;" id="quantity1" class="form-control" placeholder="Quantity" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 100px; max-height: 30px;" id="unitPrice1" class="form-control" placeholder="Unit Price" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 100px; max-height: 30px;" id="discount1" class="form-control" placeholder="Discount" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 100px; max-height: 30px;" id="warehouse1" class="form-control" placeholder="Warehouse" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 100px; max-height: 30px;" id="instock1" class="form-control" placeholder="Instock" disabled />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" style="width: 100px; max-height: 30px;" id="lineTotal1" class="form-control" placeholder="Line Total" disabled />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Select an Item</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Modal content goes here -->
+                    <p>Here you can put your item selection content.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" >Choose</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    
+    // Open modal when Tab key is pressed while input field is focused
+    document.querySelector('#itemCode1').addEventListener('keydown', function (event) {
+        if (event.key === 'Tab' && $('#itemCode1').val() === '') {
+            event.preventDefault(); // Prevent default tab behavior
+            $('#exampleModal').modal('show');
+        }
+    });
+
+</script>

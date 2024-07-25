@@ -2,7 +2,7 @@
 using SimpleERP.Models;
 using System.Diagnostics;
 
-namespace SimpleERP.Controllers
+namespace SimpleERP.Controllers.Home
 {
     public class HomeController : Controller
     {
